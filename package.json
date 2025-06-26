@@ -1,0 +1,10 @@
+{
+  "name": "react-prisma-fasity-stack",
+  "version": "1.0.0",
+  "description": "A monorepo for a coffee shop POS system",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "docker-up": "docker-compose --file docker-compose.yaml up --build --detach"
+  }
+}
