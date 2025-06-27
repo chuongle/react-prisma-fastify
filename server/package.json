@@ -9,14 +9,19 @@
   },
   "dependencies": {
     "@fastify/autoload": "^6.3.1",
-    "coffee-pos-mock-data": "git+https://github.com/chuongle/coffee-pos-mock-data.git",
-    "fastify": "^5.4.0",
-    "typescript": "^5.8.3"
+    "@prisma/client": "^6.10.1",
+    "coffee-pos-mock-data": "https://github.com/chuongle/coffee-pos-mock-data.git",
+    "fastify": "^5.4.0"
   },
   "devDependencies": {
-    "@types/node": "^24.0.3",
+    "@types/node": "^24.0.4",
     "fastify-tsconfig": "^3.0.0",
     "ts-node": "^10.9.2",
-    "tsc-watch": "^7.1.1"
+    "tsc-watch": "^7.1.1",
+    "typescript": "^5.8.3"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma",
+    "seed": "npx ts-node ./src/prisma/seed.ts"
   }
 }
