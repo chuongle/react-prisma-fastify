@@ -1,0 +1,22 @@
+{
+  "name": "fastify-prisma-server",
+  "version": "1.0.0",
+  "description": "A RESTful API for a coffee shop POS system built with Fastify and Prisma.",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development tsc-watch --onSuccess \"node dist/index.js\""
+  },
+  "dependencies": {
+    "@fastify/autoload": "^6.3.1",
+    "coffee-pos-mock-data": "git+https://github.com/chuongle/coffee-pos-mock-data.git",
+    "fastify": "^5.4.0",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "fastify-tsconfig": "^3.0.0",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^7.1.1"
+  }
+}
