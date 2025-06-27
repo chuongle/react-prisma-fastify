@@ -2,7 +2,7 @@ import { categories, items, variants } from 'coffee-pos-mock-data';
 
 import { Decimal } from '@prisma/client/runtime/library';
 
-import { PrismaClient, Size } from '../generated/prisma';
+import { PrismaClient, Size } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
