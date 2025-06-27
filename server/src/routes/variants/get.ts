@@ -1,4 +1,3 @@
-import { variants } from 'coffee-pos-mock-data';
 import { FastifyPluginAsync } from 'fastify';
 
 const getVariant: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
@@ -13,7 +12,7 @@ const getVariant: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
       return reply.code(404).send({ error: `Item ${variantId} not foud` });
     }
 
-    const variant = variants.variants.find(v => v.variantId === variantId);
+    const variant = await fastify.prisma.itemVariant.findUnique({ where: { variantId } });
 
     if (!variant) {
       return reply.code(404).send({ error: `Item ${variantId} not foud` });

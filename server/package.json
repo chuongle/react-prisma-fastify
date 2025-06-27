@@ -11,7 +11,8 @@
     "@fastify/autoload": "^6.3.1",
     "@prisma/client": "^6.10.1",
     "coffee-pos-mock-data": "https://github.com/chuongle/coffee-pos-mock-data.git",
-    "fastify": "^5.4.0"
+    "fastify": "^5.4.0",
+    "fastify-plugin": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^24.0.4",

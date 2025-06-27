@@ -2,11 +2,13 @@ import Fastify, { FastifyInstance } from 'fastify';
 import path from 'node:path';
 
 import fastifyAutoload from '@fastify/autoload';
+import prismaPlugin from './plugins/prisma';
 
 const server: FastifyInstance = Fastify({
   logger: true,
 });
 
+server.register(prismaPlugin);
 server.register(fastifyAutoload, {
   dir: path.join(__dirname, 'routes'),
   routeParams: true,

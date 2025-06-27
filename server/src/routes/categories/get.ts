@@ -1,4 +1,3 @@
-import { categories } from 'coffee-pos-mock-data';
 import { FastifyPluginAsync } from 'fastify';
 
 const getCategory: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
@@ -13,7 +12,7 @@ const getCategory: FastifyPluginAsync = async (fastify, opts): Promise<void> => 
       return reply.code(404).send({ error: `Category ${categoryId} not foud` });
     }
 
-    const category = categories.categories.find(c => c.categoryId === categoryId);
+    const category = await fastify.prisma.category.findUnique({ where: { categoryId } });
 
     if (!category) {
       return reply.code(404).send({ error: `Category ${categoryId} not foud` });

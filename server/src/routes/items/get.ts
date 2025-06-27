@@ -1,4 +1,3 @@
-import { items } from 'coffee-pos-mock-data';
 import { FastifyPluginAsync } from 'fastify';
 
 const getItem: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
@@ -13,7 +12,7 @@ const getItem: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
       return reply.code(404).send({ error: `Item ${itemId} not foud` });
     }
 
-    const item = items.items.find(v => v.itemId === itemId);
+    const item = await fastify.prisma.item.findUnique({ where: { itemId } });
 
     if (!item) {
       return reply.code(404).send({ error: `Item ${itemId} not foud` });
