@@ -1,6 +1,6 @@
 {
   "name": "react-prisma-fasity-stack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A monorepo for a coffee shop POS system",
   "main": "index.js",
   "license": "MIT",
